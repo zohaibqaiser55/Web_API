@@ -5,12 +5,13 @@
   "main": "index.js",
   "module": "app.js",
   "scripts": {
-    "start": "nodemon index",
+    "start": "nodemon -r dotenv/config index",
     "lint": "eslint --format table --fix ."
   },
   "author": "Zohaib",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
