@@ -9,5 +9,6 @@ userRouter.route('/')
 
 userRouter.get('/:id')
 .put(userController.updateUsers)
+.delete(userController.deleteUsers)
 
 
