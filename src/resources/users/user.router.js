@@ -10,6 +10,6 @@ userRouter.route('/')
 userRouter.route('/:id')
 .delete(userController.deleteUser)
 .put(userController.updateUser)
-.delete(userController.deleteUser)
+.get(userController.getProfile)
 
 

@@ -54,7 +54,14 @@ const userController ={
     }
   },
 
-  async getDashboard(req, res){}
+  async getDashboard(req, res){
+      try {
+        //const user = await User.findById(req.user._id) 
+        res.status(200).send("you must sign in first") 
+      } catch (error) {
+          res.status(400).send(error)
+      }
+  }
 
 
 }
