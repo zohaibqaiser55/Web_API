@@ -4,11 +4,12 @@ export const userRouter = express.Router()
 
 /**Routes for Crude fuctionality */
 userRouter.route('/')
-.get(userController.getUsers)
+.get(userController.getUser)
 .post(userController.createUser)
 
-userRouter.get('/:id')
-.put(userController.updateUsers)
-.delete(userController.deleteUsers)
+userRouter.route('/:id')
+.delete(userController.deleteUser)
+.put(userController.updateUser)
+.delete(userController.deleteUser)
 
 

@@ -14,7 +14,7 @@ const userController ={
  },
  
  
- async getUsers(req, res){
+ async getUser(req, res){
      try{
         const result = await User.find().sort('createdAt')
         res.status(200).send(result)
@@ -23,16 +23,40 @@ const userController ={
     }
  },
 
-  async updateUsers(req, res){
+  async updateUser(req, res){
      try{
         const user = await User.findByIdAndUpdate(req.params.id, req.body, {new : true })
         res.status(200).send(user)
     }catch(error){
         res.status(400).send(error)
     }
-}
+},
+
+  async deleteUser(req, res){
+     try{
+        const user = await User.deleteOne({ _id: req.params.id })
+        res.status(200).send(user)
+    }catch(error){
+        res.status(400).send(error)
+        }
+
+    },
+
+  async getProfile(req, res){ 
+      try{
+        const user = await User.findByid(req.parms.id )
+        if(!user){
+            return res.status(404).send('User not found')
+        }
+        res.status(200).send(user)
+    }catch(error){
+        res.status(400).send(error)
+    }
+  },
+
+  async getDashboard(req, res){}
+
 
 }
-
 /**export controller */
 export default userController

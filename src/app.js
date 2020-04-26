@@ -10,4 +10,4 @@ app.use(bodyParser.json()) //read jason
 app.use(bodyParser.urlencoded({extended: true})) //read URLs
 
 app.use('/', router)
-app.listen(8080, () => console.log('service is running'))
+app.listen(3000, () => console.log('service is running'))
